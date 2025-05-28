@@ -11,7 +11,6 @@ const sliderImages = [
   { image: '/bgimages/bg8.jpeg' },
   { image: '/bgimages/bg9.jpeg' },
   { image: '/bgimages/bg10.jpeg' },
-
 ]
 
 const BackgroundSlider = () => {
@@ -28,8 +27,7 @@ const BackgroundSlider = () => {
   }, [])
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Background Images */}
+    <div className="w-full h-screen relative mt-10">
       {sliderImages.map((slide, index) => (
         <img
           key={index}
@@ -41,7 +39,9 @@ const BackgroundSlider = () => {
         />
       ))}
 
-     </div>
+      {/* Overlay for readability */}
+      <div className="absolute top-0 left-0 w-full h-full z-10"></div>
+    </div>
   )
 }
 
